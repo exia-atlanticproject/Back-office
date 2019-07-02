@@ -26,7 +26,7 @@ Vue.use(VueRouterMiddleware, {
 });
 
 const base = axios.create({
-  baseURL: process.env.HOST_URL ? process.env.HOST_URL : 'http://localhost:8080',
+  baseURL: process.env.NODE_ENV === 'production' ? 'http://delia.ovh:6867' : 'http://localhost:8080',
 });
 
 Vue.prototype.$http = base;

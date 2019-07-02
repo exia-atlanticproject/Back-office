@@ -3,4 +3,6 @@ services:
   back-office:
     build: .
     ports:
-      - 3000:80
+      - 7070:80
+    environment:
+      - HOST_URL=http://delia.ovh:6867
