@@ -1,27 +1,35 @@
 {
   "name": "back-office",
   "version": "1.0.0",
+  "private": true,
   "description": "A Vue.js project",
   "author": "",
-  "private": true,
   "scripts": {
-    "dev": "parcel index.html",
-    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "build": "parcel build index.html",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "parcel build index.html"
+    "dev": "parcel index.html",
+    "unit": "jest --config test/unit/jest.conf.js --coverage"
   },
-  "keywords": [],
-  "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "vue": "^2.5.16",
-    "vue-router": "^3.0.1"
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-router": "^3.0.1",
+    "vue-router-middleware": "^0.2.1",
+    "vuetify": "^1.5.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@vue/component-compiler-utils": "^3.0.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^21.0.2",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^11.3.0",
     "eslint-friendly-formatter": "^3.0.0",
@@ -32,7 +40,13 @@
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",
     "parcel-bundler": "^1.7.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-cli-plugin-vuetify": "^0.5.0",
     "vue-jest": "^2.4.1",
-    "vue-template-compiler": "^2.5.16"
-  }
+    "vue-template-compiler": "^2.5.16",
+    "vuetify-loader": "^1.0.5"
+  },
+  "keywords": [],
+  "license": "ISC"
 }

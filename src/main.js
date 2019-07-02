@@ -1,12 +1,40 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
-import App from './App';
+import Vuetify from 'vuetify';
+import VueRouter from 'vue-router';
+import VueRouterMiddleware from 'vue-router-middleware';
+import axios from 'axios';
 
-Vue.config.productionTip = false;
+import 'vuetify/dist/vuetify.min.css';
+// import store from './store';
+import router from './router';
+import app from './pages/App/App';
 
-/* eslint-disable no-new */
+import Default from './Layouts/Default';
+import Blank from './Layouts/Blank';
+
+Vue.use(VueRouter);
+Vue.use(Vuetify);
+
+Vue.component('default-layout', Default);
+Vue.component('blank-layout', Blank);
+Vue.use(VueRouterMiddleware, {
+  router,
+  events: {
+    onCancelMiddleware(middlewareName, to, from, next) {
+      console.log(`next(false) has called in ${middlewareName}`);
+    } },
+});
+
+const base = axios.create({
+  baseURL: 'http://localhost:8080',
+});
+
+Vue.prototype.$http = base;
+
+// eslint-disable-next-line no-new
 new Vue({
   el: '#app',
-  render: h => h(App),
+  // store,
+  router,
+  render: h => h(app),
 });

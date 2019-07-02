@@ -1,7 +1,16 @@
 {
-  "env": {
-    "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "chrome": "60"
     }
-  }
+  }]],
+  "plugins": ["@babel/plugin-transform-runtime"]
+//  "env": {
+//    "test": {
+//      "plugins": ["transform-es2015-modules-commonjs"]
+//    }
+//  }
 }
